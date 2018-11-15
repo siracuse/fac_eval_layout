@@ -1,22 +1,83 @@
 <!DOCTYPE html>
 <html lang="fr">
 	<style>
-
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			width: 1370px;
+			margin: 0 auto;
+		}
+		.box-img {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+		}
+		.img {
+			width: 24%; 
+			height: 300px;
+		}
+		.desktop, .tablette, .telephone {
+			display: none;
+		}
+		@media all and (max-width: 1370px) {
+			body {
+				width: 100%;
+			}
+			.desktopG {
+				display: none;
+			}
+			.desktop {
+				display: block;
+			}
+			.img {
+				width: 49%;
+				height: 350px;
+				margin-bottom: 10px; 
+			}
+		}
+		@media all  and (min-width: 768px) and (max-width: 970px) {
+			.desktop {
+				display: none;
+			}
+			.tablette {
+				display: block;
+			}
+		}
+		@media all and (max-width: 767px ){
+			.img {
+				width: 99%;
+				height: 450px;
+			}
+			.tablette, .desktop {
+				display: none;
+			}
+			.telephone {
+				display: block;
+			}
+		}
 	</style>
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Eval Layout</title>
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
 		<h1 class="txtcenter">Evaluation  Layout</h1>
+		
 		<h2 class="desktopG txtcenter">Vue Desktop > 1370px</h2>
 		<h2 class="desktop txtcenter">Vue Desktop</h2>
 		<h2 class="tablette txtcenter">Vue Tablette à 768px à 970px</h2>
 		<h2 class="telephone txtcenter">Vue Téléphone à 320px</h2>
 
-
+		<div class="box-img">
+			<img src="img/mer.jpg" class="img">
+			<img src="img/lac.jpg" class="img">
+			<img src="img/montagne.jpg" class="img">
+			<img src="img/foret.jpg" class="img">
+		</div>
 
 	</body>
 </html>
